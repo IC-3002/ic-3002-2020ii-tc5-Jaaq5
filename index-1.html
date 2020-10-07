@@ -1,0 +1,50 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Desconocido </title></head><body>
+<h1 id="ic-3002-tarea-corta-5">IC-3002 Tarea corta 5</h1>
+<p>Considere el siguiente problema computacional:</p>
+<p><strong>Problema</strong>: Ordenar una secuencia de números enteros.
+<em> <strong>Entradas</strong>: <img alt="" src="https://latex.codecogs.com/png.latex?%28A%2Cn%29%" /> tal que <img alt="" src="https://latex.codecogs.com/png.latex?%24%20A%20%3D%20%28a_1%2C%20a_2%2C%20%5Cdots%2C%20a_n%7Ca_k%20%5Cin%20%5Cmathbb%7BZ%7D%29%20%5Cland%20n%20%3D%20%7CA%7C" />
+</em> <strong>Salidas</strong>: La secuencia <img alt="" src="https://latex.codecogs.com/png.latex?A" /> ordenada de manera tal que <img alt="" src="https://latex.codecogs.com/png.latex?%5Cunderset%7B0%20%5Cleq%20i%20%3C%20j%20%3C%20n%7D%20%7B%5Cforall%20i%2C%20j%7D%20%3A%20a_i%20%5Cleq%20a_j" /></p>
+<p>Este problema se puede resolver, entre otras opciones, con el algoritmo de ordenamiento por burbuja. En el archivo <code>burbuja.py</code>, la función <code>burbuja</code> implementa dicho algoritmo sobre una lista.</p>
+<ol>
+<li>
+<p>Implemente en el archivo <code>burbuja.py</code> la función <code>burbuja_optimizado</code> como una mejora a la función <code>burbuja</code> tomando en cuenta que si en un recorrido no hizo intercambios es porque la lista ya está ordenada.</p>
+</li>
+<li>
+<p>Implemente en el archivo <code>burbuja_test.py</code> las funciones <code>test_mejor_caso</code>, <code>test_peor_caso</code>, <code>test_caso_promedio</code> para probar correspondientemente los casos mejor, peor y promedio de <code>burbuja_optimizado</code>. Cada prueba debe verificar la complejidad temporal esperada para el caso correspondiente.</p>
+</li>
+</ol>
+<p><strong>Importante</strong>: para poder verificar la complejidad temporal utilizando la biblioteca <code>big_O</code>, debe programar funciones <code>generar_mejor(n)</code>, <code>generar_peor(n)</code> y <code>generar_promedio(n)</code> que retornan, cada una, una lista de enteros de tamaño <code>n</code> cuyo contenido representa una instancia del caso.</p>
+<h2 id="como-instalar-el-ambiente-de-desarrollo-y-ejecutar-las-pruebas-localmente">Cómo instalar el ambiente de desarrollo y ejecutar las pruebas localmente</h2>
+<p>Este proyecto requiere <code>python3</code>. Asegúrese que esté instalado en su distribución de linux.</p>
+<p>Si no lo ha hecho anteriormente, crear un ambiente virtual para las dependencias</p>
+<p><code>bash
+python3 -m venv .venv</code></p>
+<p>Activar el ambiente virtual</p>
+<p><code>bash
+source .venv/bin/activate</code></p>
+<p>Instalar las dependencias</p>
+<p><code>bash
+pip3 install -r requirements.txt</code></p>
+<p>Ejecutar las pruebas</p>
+<p><code>bash
+pytest -s -W ignore::DeprecationWarning</code></p>
+<h2 id="rubrica">Rúbrica</h2>
+<h3 id="completitud-5-pts">Completitud (5 pts)</h3>
+<ul>
+<li>(5 pts) La producción cumple totalmente con los requerimientos solicitados.</li>
+<li>(3 pts) La producción cumple parcialmente con los requerimientos solicitados.</li>
+<li>(1 pts) La producción, en su mayor parte, no cumple con los requerimientos solicitados.</li>
+</ul>
+<h3 id="correctitud-5-pts">Correctitud (5 pts)</h3>
+<ul>
+<li>(5 pts) El código pasa exitosamente todas las pruebas automatizadas.</li>
+<li>(3 pts) El código pasa la mayoría de las pruebas automatizadas.</li>
+<li>(1 pts) El código no pasa la mayoría de las pruebas automatizadas.</li>
+</ul>
+<h3 id="optimizacion-5-pts">Optimización (5 pts)</h3>
+<ul>
+<li>(5 pts) El código optimizado mejora el tiempo de ejecución del código original.</li>
+<li>(3 pts) El código optimizado corre en un tiempo de ejecución semejante al del código original.</li>
+<li>(1 pts) El código optimizado empeora el tiempo de ejecución del código original.</li>
+</ul>
+</body></html>

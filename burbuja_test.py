@@ -38,6 +38,36 @@ def generar_aleatorio(n):
 
     return A
 
+#-----------------------------------------------------------------------#
+
+#El mejor caso es que este ordenado ascendentemente
+def generar_mejor(n):
+    lista = list(range(0, n))
+    return lista
+
+#print(generar_mejor(10))
+
+#-----------------------------------------------------------------------#
+
+#El peor caso es que este ordenada descendentemente
+def generar_peor(n):
+    lista = list(range(0, n))
+    resultado = []
+    ultimo = len(lista) - 1
+    
+    for i in lista:
+        resultado.append(lista[ultimo])
+        ultimo = ultimo - 1
+
+    return resultado
+
+#print(generar_peor(10))
+
+#-----------------------------------------------------------------------#
+
+def generar_promedio(n):
+    lista=generar_aleatorio(n)
+    return lista
 
 class PruebasBurbuja(unittest.TestCase):
 
@@ -81,13 +111,31 @@ class PruebasBurbuja(unittest.TestCase):
         self.assertLessEqual(fitted_o['times'][-1], fitted['times'][-1])
 
 
+
+#Se agregan funciones para probar con big o, basandose
+#en la funcion test_burbuja_cuadratica
     def test_mejor_caso(self):
-        self.fail('Pendiente de implementar')
+        print()
+        best, fitted = big_o.big_o(burbuja_optimizado, generar_mejor, min_n=10, max_n=1000,
+                                   n_measures=100, n_repeats=3, verbose=False,
+                                   classes=[cmpl.Linear, cmpl.Quadratic], return_raw_data=True)
+
+        _graficar(fitted, 'burbuja optimizado mejor caso')
 
 
     def test_peor_caso(self):
-        self.fail('Pendiente de implementar')
+        print()
+        best, fitted = big_o.big_o(burbuja_optimizado, generar_peor, min_n=10, max_n=1000,
+                                   n_measures=100, n_repeats=3, verbose=False,
+                                   classes=[cmpl.Linear, cmpl.Quadratic], return_raw_data=True)
+
+        _graficar(fitted, 'burbuja optimizado peor caso')
 
 
     def test_caso_promedio(self):
-        self.fail('Pendiente de implementar')
+        print()
+        best, fitted = big_o.big_o(burbuja_optimizado, generar_promedio, min_n=10, max_n=1000,
+                                   n_measures=100, n_repeats=3, verbose=False,
+                                   classes=[cmpl.Linear, cmpl.Quadratic], return_raw_data=True)
+
+        _graficar(fitted, 'burbuja optimizado caso promedio')
